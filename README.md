@@ -4,3 +4,7 @@
 ## 📦Pacotes Necessários
 1. Express
 2. MongoDB
+
+## Intregantes
+1. Marcos Felipe Cruz Beraldo
+2. Rafael Gomes Fernandes
