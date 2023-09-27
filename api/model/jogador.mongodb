@@ -1,0 +1,34 @@
+use('FatecItu')
+
+db.jogadores.insertOne({
+    "nome": "Max Mazanov",
+    "nacionalidade": "Estadunidense",
+    "nick": "Demon1",
+    "time": {
+        "nome": "Evil Geniuses",
+        "regiao": "NA"
+    },
+    "idade": 21
+})
+
+db.jogadores.insertOne({
+    "nome": "Leonardo Otsuka",
+    "nacionalidade": "Brasileiro",
+    "nick": "JAH POD AL MOSSA",
+    "time": {
+        "nome": "Oddik",
+        "regiao": "BR"
+    },
+    "idade": 23
+})
+
+db.jogadores.insertOne({
+    "nome": "Heitor Tomazela",
+    "nacionalidade": "Brasileiro",
+    "nick": "kct o inverso",
+    "time": {
+        "nome": "Oddik",
+        "regiao": "BR"
+    },
+    "idade": 23
+})
