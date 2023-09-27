@@ -1,0 +1,53 @@
+@baseURL = http://localhost:4000/api/jogadores
+
+//GET
+GET {{baseURL}}
+Content-Type: application/json
+
+###
+//GET - Um registro pelo id
+GET {{baseURL}}/id/65148bd244ebc9a0839992c3
+Content-Type: application/json
+
+###
+//GET - Um registro pelo nome
+GET {{baseURL}}/nome/santos
+Content-Type: application/json
+
+###
+//DELETE - Um registro pelo id
+DELETE {{baseURL}}/65148ef27f51284f2df939f0
+Content-Type: application/json
+
+###
+//POST - Insere um novo registro
+POST {{baseURL}}
+Content-Type: application/json
+
+{
+    "nome": "Heitor Tomazela",
+    "nacionalidade": "Brasileiro",
+    "nick": "kct o inverso",
+    "time": {
+        "nome": "Oddik",
+        "regiao": "BR"
+    },
+    "idade": 23
+}
+
+###
+//PUT - Altera o registro
+PUT {{baseURL}}
+Content-Type: application/json
+
+{
+    "_id": "65148f057f51284f2df939f1",
+    "nome": "Heitor Tomazela",
+    "nacionalidade": "Brasileiro",
+    "nick": "tck",
+    "time": {
+        "nome": "Oddik",
+        "regiao": "BR"
+    },
+    "idade": 23
+}

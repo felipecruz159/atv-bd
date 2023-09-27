@@ -5,10 +5,11 @@ const port = 4000
 
 import rotasJogadores from './routes/jogador.js'
 // app.routes(express.urlencoded({ extended: true}))
-app.use('/api/jogadores', rotasJogadores)
-
 app.use(express.json())
 app.use('/', express.static('public'))
+
+app.use('/api/jogadores', rotasJogadores)
+
 app.get('/api', (req, res) => {
     res.status(200).json({
         message: 'API Funcional',
