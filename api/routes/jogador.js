@@ -73,6 +73,26 @@ router.get('/nome/:nome', async (req, res) => {
 })
 
 /**
+ * GET /api/jogadores/nome/:id
+ * Lista maiores de idade
+ */
+router.get('/maiores', async (req, res) => {
+    try {
+        db.collection(nomeCollection).find({
+            'idade': { $gte: 18 } // Filtrar por idade maior ou igual a 18 anos
+        }).toArray((err, docs) => {
+            if (err) {
+                res.status(400).json(err);
+            } else {
+                res.status(200).json(docs);
+            }
+        });
+    } catch (err) {
+        res.status(500).json({ "error": err.message });
+    }
+});
+
+/**
  * DELETE /api/jogadores/:id
  * Apaga o jogador pelo id
  */

@@ -15,6 +15,11 @@ GET {{baseURL}}/nome/santos
 Content-Type: application/json
 
 ###
+//GET - Um registro de maiores de idade
+GET {{baseURL}}/maiores
+Content-Type: application/json
+
+###
 //DELETE - Um registro pelo id
 DELETE {{baseURL}}/65148ef27f51284f2df939f0
 Content-Type: application/json
