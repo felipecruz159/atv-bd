@@ -79,7 +79,7 @@ router.get('/nome/:nome', async (req, res) => {
 router.get('/maiores', async (req, res) => {
     try {
         db.collection(nomeCollection).find({
-            'idade': { $gte: 18 } // Filtrar por idade maior ou igual a 18 anos
+            'idade': { $gte: 18, $lte: 40 } // Filtrar por idade maior ou igual a 18 anos e menor ou igual a 40 anos
         }).toArray((err, docs) => {
             if (err) {
                 res.status(400).json(err);
