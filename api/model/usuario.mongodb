@@ -1,0 +1,20 @@
+use('FatecItu')
+db.usuarios.insertOne({
+    'nome': 'Marcos Felipe',
+    'email': 'marcos@gmail.com',
+    'senha': '123mudar',
+    'ativo': true
+})
+
+use('FatecItu')
+db.usuarios.createIndex(
+    {
+        'email': 1
+    },
+    {
+        unique: true
+    }
+)
+
+use('FatecItu')
+db.usuarios.find()

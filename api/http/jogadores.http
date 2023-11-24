@@ -3,31 +3,37 @@
 //GET
 GET {{baseURL}}
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU2MDdkZjkzODE5M2Y4ZTlhZGJjNDI1In0sImlhdCI6MTcwMDgyNTQzMywiZXhwIjoxNzAxMDg0NjMzfQ.vO5UdibBU0bFqJxcwYMf795_-L59mfu1Y8pvB8RBxNk
 
 ###
 //GET - Um registro pelo id
 GET {{baseURL}}/id/65148bd244ebc9a0839992c3
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU2MDdkZjkzODE5M2Y4ZTlhZGJjNDI1In0sImlhdCI6MTcwMDgyNTQzMywiZXhwIjoxNzAxMDg0NjMzfQ.vO5UdibBU0bFqJxcwYMf795_-L59mfu1Y8pvB8RBxNk
 
 ###
 //GET - Um registro pelo nome
 GET {{baseURL}}/nome/santos
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU2MDdkZjkzODE5M2Y4ZTlhZGJjNDI1In0sImlhdCI6MTcwMDgyNTQzMywiZXhwIjoxNzAxMDg0NjMzfQ.vO5UdibBU0bFqJxcwYMf795_-L59mfu1Y8pvB8RBxNk
 
 ###
 //GET - Um registro de maiores de idade
 GET {{baseURL}}/maiores
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU2MDdkZjkzODE5M2Y4ZTlhZGJjNDI1In0sImlhdCI6MTcwMDgyNTQzMywiZXhwIjoxNzAxMDg0NjMzfQ.vO5UdibBU0bFqJxcwYMf795_-L59mfu1Y8pvB8RBxNk
 
 ###
 //DELETE - Um registro pelo id
 DELETE {{baseURL}}/65148ef27f51284f2df939f0
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU2MDdkZjkzODE5M2Y4ZTlhZGJjNDI1In0sImlhdCI6MTcwMDgyNTQzMywiZXhwIjoxNzAxMDg0NjMzfQ.vO5UdibBU0bFqJxcwYMf795_-L59mfu1Y8pvB8RBxNk
 
 ###
 //POST - Insere um novo registro
 POST {{baseURL}}
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU2MDdkZjkzODE5M2Y4ZTlhZGJjNDI1In0sImlhdCI6MTcwMDgyNTQzMywiZXhwIjoxNzAxMDg0NjMzfQ.vO5UdibBU0bFqJxcwYMf795_-L59mfu1Y8pvB8RBxNk
 
 {
     "nome": "Heitor Tomazela",
@@ -44,6 +50,7 @@ Content-Type: application/json
 //PUT - Altera o registro
 PUT {{baseURL}}
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU2MDdkZjkzODE5M2Y4ZTlhZGJjNDI1In0sImlhdCI6MTcwMDgyNTQzMywiZXhwIjoxNzAxMDg0NjMzfQ.vO5UdibBU0bFqJxcwYMf795_-L59mfu1Y8pvB8RBxNk
 
 {
     "_id": "65148f057f51284f2df939f1",

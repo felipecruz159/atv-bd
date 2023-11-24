@@ -6,6 +6,8 @@ const router = express.Router()
 const { db, ObjectId } = await connectToDatabase()
 const nomeCollection = 'jogadores';
 
+import auth from '../middleware/auth.js'
+
 const validaJogador = [
     check('nick')
     .not().isEmpty().trim().withMessage('É obrigatório informar o nick'), 
@@ -16,7 +18,7 @@ const validaJogador = [
  * GET /api/jogador
  * Lista todos os jogadores 
  */
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     try {
         db.collection(nomeCollection).find().sort({ nome: 1 }).toArray((err, docs) => {
             if (!err) {
@@ -38,7 +40,7 @@ router.get('/', async (req, res) => {
  * GET /api/jogadores/id/:id
  * Lista 
  */
-router.get('/id/:id', async (req, res) => {
+router.get('/id/:id', auth, async (req, res) => {
     try {
         db.collection(nomeCollection).find({ '_id': { $eq: ObjectId(req.params.id) } })
             .toArray((err, docs) => {
@@ -57,7 +59,7 @@ router.get('/id/:id', async (req, res) => {
  * GET /api/jogadores/nome/:id
  * Lista 
  */
-router.get('/nome/:nome', async (req, res) => {
+router.get('/nome/:nome', auth, async (req, res) => {
     try {
         db.collection(nomeCollection).find({ 'nome': { $regex: req.params.nome, $options: "i"}})
             .toArray((err, docs) => {
@@ -76,7 +78,7 @@ router.get('/nome/:nome', async (req, res) => {
  * GET /api/jogadores/nome/:id
  * Lista maiores de idade
  */
-router.get('/maiores', async (req, res) => {
+router.get('/maiores', auth, async (req, res) => {
     try {
         db.collection(nomeCollection).find({
             'idade': { $gte: 18, $lte: 40 } // Filtrar por idade maior ou igual a 18 anos e menor ou igual a 40 anos
@@ -96,7 +98,7 @@ router.get('/maiores', async (req, res) => {
  * DELETE /api/jogadores/:id
  * Apaga o jogador pelo id
  */
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
     await db.collection(nomeCollection)
         .deleteOne({ "_id": { $eq: ObjectId(req.params.id) } })
         .then(result => res.status(200).send(result))
@@ -108,7 +110,7 @@ router.delete('/:id', async (req, res) => {
  * Insere um novo jogador
  */
 
-router.post('/', validaJogador, async (req, res) => {
+router.post('/', auth, validaJogador, async (req, res) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
         return res.status(400).json(({
@@ -127,7 +129,7 @@ router.post('/', validaJogador, async (req, res) => {
  * Altera um jogador
  */
 
-router.put('/', validaJogador, async (req, res) => {
+router.put('/', auth, validaJogador, async (req, res) => {
     let idDocumento = req.body._id
     delete req.body._id
     const errors = validationResult(req)
