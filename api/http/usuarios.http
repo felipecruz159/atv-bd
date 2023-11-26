@@ -36,6 +36,8 @@ access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU2M
 // PUT - Edita o usuário pelo id
 PUT {{baseURL}}/65607df938193f8e9adbc425
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU2MDdkZjkzODE5M2Y4ZTlhZGJjNDI1In0sImlhdCI6MTcwMDgyNTQzMywiZXhwIjoxNzAxMDg0NjMzfQ.vO5UdibBU0bFqJxcwYMf795_-L59mfu1Y8pvB8RBxNk
+
 
 {
     "nome": "Rafael Gomes",

@@ -44,8 +44,9 @@ function Adicionar() {
     modalAdicionar.show()
 }
 
-async function Editar(teste) {
-    const modal = document.getElementById('modalEditar')
+async function Editar(id) {
+    const modal = new bootstrap.Modal(document.getElementById('modalEditar'))
+    const idJogador = document.getElementById('idJogador')
     const nome = document.getElementById('editarNome')
     const nacionalidade = document.getElementById('editarNacionalidade')
     const nick = document.getElementById('editarNick')
@@ -53,7 +54,7 @@ async function Editar(teste) {
     const regiao = document.getElementById('editarRegiao')
     const idade = document.getElementById('editarIdade')
 
-    const response = await fetch(`${urlBase}/jogadores/id/${teste}`, {
+    const response = await fetch(`${urlBase}/jogadores/id/${id}`, {
         method: 'GET',
         headers: new Headers({
             'Content-Type': 'application/json',
@@ -63,22 +64,61 @@ async function Editar(teste) {
         .then(response => response.json())
         .then(data => {
             
-            console.log(data)
-            console.log(data[0].nome)
+            idJogador.value = data[0]._id
             nome.value = data[0].nome
-
-            modal.classList.remove('d-none')
+            nacionalidade.value = data[0].nacionalidade
+            nick.value = data[0].nick
+            time.value = data[0].time.nome
+            regiao.value = data[0].time.regiao
+            idade.value = data[0].idade
+            modal.show()
         })
-    // declarar modal e trocar variaveis
+}
 
+async function confirmarEditar(){ 
+    try {
+        const idJogador = document.getElementById('idJogador').value;
+        const nome = document.getElementById('editarNome').value;
+        const nacionalidade = document.getElementById('editarNacionalidade').value;
+        const nick = document.getElementById('editarNick').value;
+        const time = document.getElementById('editarTime').value;
+        const regiao = document.getElementById('editarRegiao').value;
+        const idade = document.getElementById('editarIdade').value;
 
+        const body = JSON.stringify({
+            nome: nome,
+            nacionalidade: nacionalidade,
+            nick: nick,
+            time: {
+                nome: time,
+                regiao: regiao
+            },
+            idade: idade
+            // Adicione outros campos conforme necessário
+        });
 
+        const response = await fetch(`${urlBase}/jogadores/id/${idJogador}`, {
+            method: 'PUT',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU2MDdkZjkzODE5M2Y4ZTlhZGJjNDI1In0sImlhdCI6MTcwMDk0OTAwNywiZXhwIjoxNzAxMjA4MjA3fQ.UQsdNpiSe2FoNJ7KdGD_X0FX8MLELlNvXHUO9slKGKs'
+            }),
+            body: body
+        });
 
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
+        }
 
+        // Lide com a resposta da requisição PUT conforme necessário
+        console.log('Jogador atualizado com sucesso!');
+    } catch (error) {
+        console.error('Erro ao editar jogador:', error);
+    }
 }
 
 function Deletar() {
     const resultadoModal = new bootstrap.Modal(document.getElementById('modalMensagem'))
-    document.getElementById('mensagem').innerHTML = `<span class="text-danger">Teste</span>`
+    document.getElementById('mensagem').innerHTML = `<span class="text-danger">id</span>`
     resultadoModal.show() //abre o Modal
 }
