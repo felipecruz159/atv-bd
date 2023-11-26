@@ -3,3 +3,15 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+#status span {
+    background-color: rgba(144, 238, 144, 0.2);
+    /* Cor verde clara com transparência */
+    color: #008000;
+    /* Cor verde para o texto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+

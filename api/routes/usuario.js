@@ -109,6 +109,7 @@ router.post('/login', validaLogin, async (req, res) => {
                 res.status(200).json({
                     access_token: token
                 })
+                console.log(token)
             }
         )
     } catch (e) {

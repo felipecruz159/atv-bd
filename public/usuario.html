@@ -21,24 +21,26 @@
 </head>
 
 <body>
-    <div id="status" class="container-fluid text-center"></div>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card shadow-lg">
                     <div class="card-header">
-                        <h2 class="text-success">Área reservada</h2>
+                        <h2 class="text-success">Cadastro</h2>
                     </div>
                     <!-- SVG -->
                     <div class="card-body d-flex justify-content-center align-items-center">
-                        <object data="images/winner.svg" type="image/svg+xml" style="width:50%"
+                        <object data="images/register.svg" type="image/svg+xml" style="width:50%"
                             class="justify-content-center"></object>
 
-                        <form id="loginForm">
+                        <form id="registerForm">
                             <div class="my-1">
-                                <label for="login" class="form-label">Email do usuário</label>
-                                <input type="text" class="form-control" id="login" name="login" autofocus
-                                    autocomplete="email">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="nome" name="nome" autofocus>
+                            </div>
+                            <div class="my-1">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" autocomplete="email">
                             </div>
                             <div class="my-1">
                                 <label for="senha" class="form-label">Senha</label>
@@ -46,13 +48,13 @@
                             </div>
                             <div class="my-3">
                                 <button type="submit" class="btn btn-success">
-                                    <i class="bi bi-file-earmark-lock"></i> Login
+                                    <i class="bi bi-file-earmark-lock"></i> Cadastrar
                                 </button>
                             </div>
                         </form>
                     </div>
                     <div class="card-footer">
-                        Ainda não é usuário? <a href="usuario.html">Cadastre-se</a>
+                        <a href="index.html">Já tenho um cadastro</a>
                     </div>
                 </div>
             </div>
@@ -75,7 +77,7 @@
             </div>
         </div>
     </div>
-    <script src="js/login.js"></script>
+    <script src="js/cadastro.js"></script>
 </body>
 
 </html>
