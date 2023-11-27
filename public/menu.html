@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-sm-4">
                             <button type="button" class="btn add-new bg-success"
-                                onclick="Adicionar()">Adicionar</button>
+                                onclick="abreAdicionar()">Adicionar</button>
                         </div>
                     </div>
                 </div>
@@ -56,12 +56,14 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal excluir-->
     <div class="modal fade" id="modalMensagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">ℹ Mensagem</h1>
+                    <input type="text" class="d-none" value="" id="setDelId">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Deseja realmente excluir?
+                    </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -69,7 +71,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-danger" onclick="confirmaExcluir()">Excluir</button>
                 </div>
             </div>
         </div>
@@ -123,7 +125,7 @@
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
                     <button class="btn btn-danger" data-bs-dismiss="modal">Voltar</button>
-                    <button class="btn btn-success">Adicionar</button>
+                    <button class="btn btn-success" onclick="Adicionar()">Adicionar</button>
                 </div>
             </div>
         </div>

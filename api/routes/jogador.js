@@ -145,4 +145,23 @@ router.put('/', auth, validaJogador, async (req, res) => {
             .catch(err => res.status(400).json(err))
     }
 })
+
+/**
+ * PUT /jogadores/id
+ */
+router.put('/:id', auth, validaJogador, async (req, res) => {
+    const schemaErrors = validationResult(req)
+    if (!schemaErrors.isEmpty()) {
+        return res.status(403).json({
+            errors: schemaErrors.array()
+        })
+    } else {
+        await db.collection(nomeCollection)
+            .updateOne({ '_id': { $eq: ObjectId(req.params.id) } },
+                { $set: req.body }
+            )
+            .then(result => res.status(202).send(result))
+            .catch(err => res.status(400).json(err))
+    }
+})
 export default router
