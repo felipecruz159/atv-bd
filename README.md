@@ -1,6 +1,4 @@
-
-
-3. # 🚀 Atividade Backend Node.js integrado ao Mongodb
+# 🚀 Atividade Backend Node.js integrado ao Mongodb
 >> Projeto criado na aula de Laboratório de Banco de Dados
 
 ## Intregantes
